@@ -80,6 +80,60 @@ export default function App() {
     },
     
   ];
+  const tasks=[
+    {
+      title:"Mobile App Development",
+      num:5
+    },
+    {
+      title:" Web Development",
+      num:6
+    },
+    {
+      title:"Push Ups",
+      num:7
+    },
+    {
+      title:"React Native Utility",
+      num:7
+    },
+    {
+      title:"Eating Pasta",
+      num:7
+    },
+    {
+      title:"Video Games",
+      num:7
+    },
+    {
+      title:"Sleeping",
+      num:7
+    },
+    {
+      title:"Grocery Shopping",
+      num:7
+    },
+    {
+      title:"Cleaning room",
+      num:7
+    },
+    {
+      title:"Work presentation",
+      num:7
+    },
+    {
+      title:"Laundry",
+      num:7
+    },
+    {
+      title:"Lawn Mowing",
+      num:7
+    },
+    {
+      title:"Jogging",
+      num:7
+    },
+  ]
   
   const handleSearch = text => {
     setQuery(text);
@@ -108,6 +162,14 @@ export default function App() {
           <Text style={styles.Text}>{item.name}</Text> 
           <Text style={styles.Letters}>{item.title}</Text></View>)}
            
+        />
+         <View style={styles.ongoingTaskContainer}>
+        <Image source={require('./assets/OngoingTask.jpg')}/>
+      </View>
+        <FlatList
+        horizontal={false}
+        data={tasks}
+        renderItem={({item})=>(<View><Text style={styles.second}>{item.title}</Text></View>)}
         />
     <View style={styles.searchContainer}>
       <TextInput
@@ -196,6 +258,27 @@ fontWeight:'bold'
     top: 40
     
   },
+  second: {
+    padding:60,
+    fontWeight: 'bold',
+    marginVertical: 5,
+    marginHorizontal: 10,
+      fontSize:'16',
+      backgroundColor:'white',
+      borderWidth: 7,
+      borderRadius:20,
+      borderColor:'#f0e2d3',
+      overflow: 'hidden',
+      margin:20,
+      justifyContent:'center',
+    alignSelf:'stretch',
+    top: 10
+  },
+  ongoingTaskContainer: {
+    alignSelf: 'flex-end',
+    top: 10,
+    left: -250
+  },
 
   searchContainer: {
     backgroundColor: '#fff',
@@ -206,7 +289,7 @@ fontWeight:'bold'
     alignItems: 'center',
     width: 280,
     height: 50,
-    top:-340,
+    top:-2465,
     left:10
   },
   searchInput: {
